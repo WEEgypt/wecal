@@ -28,10 +28,10 @@ tr {
     height: 34px;
 }
 label {
-    margin: 0 20px 0 0px;
+    margin: 0 10px 0 0px;
     float: left;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 14px;
 }
 footer {
     display: inline-block;

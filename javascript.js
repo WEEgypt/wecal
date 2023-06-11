@@ -1,30 +1,21 @@
-function CalQuota1() {
+function CalMob() {
     document.getElementById("RealMoney").value = Math.round(Math.ceil(document.getElementById("ReqBalance").value * 10) / 7) + " LE";
 }
-function ResetCal1() {
+function ResetCalMob() {
     document.getElementById("ReqBalance").value = "";
     document.getElementById("RealMoney").value = "";
 }
-function CalQuota2() {
+function CalAdsl() {
     document.getElementById("RealMoneyADSL").value = Math.round(Math.ceil(document.getElementById("ReqBalanceADSL").value * 14) / 100) + parseInt(document.getElementById("ReqBalanceADSL").value) || 0 + " LE";
 }
-function ResetCal2() {
+function ResetAdsl() {
     document.getElementById("ReqBalanceADSL").value = "";
     document.getElementById("RealMoneyADSL").value = "";
 }
-function CalQuota3() {
+function CalQuota() {
     document.getElementById("CSTQuota").value = Math.ceil((document.getElementById("BESQuota").value / 8 / 8 / 8 / 8 / 8 / 8 / 8 / 8 / 8 / 8) * 100) / 100 + " GB";
 }
-function ResetCal3() {
+function ResetCal() {
     document.getElementById("BESQuota").value = "";
     document.getElementById("CSTQuota").value = "";
-}
-function Thanks() {
-    if (thanks.style.display === "none") {
-        thanks.style.display = "block";
-        document.getElementById("more").innerHTML = "Our Management ˄";
-    } else {
-        thanks.style.display = "none";
-        document.getElementById("more").innerHTML = "Our Management ˅";
-    }
 }

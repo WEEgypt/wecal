@@ -1,3 +1,26 @@
+function Check(input) {
+    if (input.value.length > input.maxLength) {
+        input.value = input.value.slice(0, input.maxLength);
+    }
+}
+document.getElementById("ReqBalance").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        CalMob();
+    }
+});
+document.getElementById("ReqBalanceADSL").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        CalAdsl();
+    }
+});
+document.getElementById("BESQuota").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        CalQuota();
+    }
+});
 function CalMob() {
     document.getElementById("RealMoney").value = Math.round(Math.ceil(document.getElementById("ReqBalance").value * 10) / 7) + " LE";
 }

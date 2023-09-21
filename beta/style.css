@@ -41,7 +41,8 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-input[type="button"], [type="reset"] {
+input[type="button"],
+[type="reset"] {
     margin: 0px 0px 0px 4px;
 }
 label {

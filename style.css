@@ -1,24 +1,38 @@
 :root {
-    --bg: #fff;
-    --color: #000;
+    --bg: #f2f2f2;
+    --mainDiv: #fff;
+    --color: #2d3737;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #000;
+        --mainDiv: #2d3737;
         --color: #fff;
     }
 }
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
 body {
-    background-color: var(--bg);
     font-family: verdana;
-    color: var(--color);
-    text-align: center;
+    font-size: 14px;
     margin: auto;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    min-width: 320px;
-    max-width: 960px;
-    padding: 8px;
+    min-width: max-content;
+    color: var(--color);
+    padding: 10px;
+    background-color: var(--bg);
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+}
+.mainDiv {
+    background-color: var(--mainDiv);
+    padding: 25px;
 }
 .content {
     max-width: max-content;
@@ -51,5 +65,5 @@ label {
     color: white;
 }
 .label {
-    background-color: indigo;
+    background-color: #5b2c92;
 }

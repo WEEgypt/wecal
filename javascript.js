@@ -9,12 +9,6 @@ document.getElementById("ReqBalancePrepaid").addEventListener("keypress", functi
         CalPrepaid();
     }
 });
-document.getElementById("ReqBalancePostpaid").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        CalPostpaid();
-    }
-});
 document.getElementById("ReqBalanceADSL").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -33,13 +27,6 @@ function CalPrepaid() {
 function ResetPrepaid() {
     document.getElementById("ReqBalancePrepaid").value = "";
     document.getElementById("RealMoneyPrepaid").value = "";
-}
-function CalPostpaid() {
-    document.getElementById("RealMoneyPostpaid").value = Math.ceil((Number(document.getElementById("ReqBalancePostpaid").value) * 23.12) / 100 + Number(document.getElementById("ReqBalancePostpaid").value)) + " LE";
-}
-function ResetPostpaid() {
-    document.getElementById("ReqBalancePostpaid").value = "";
-    document.getElementById("RealMoneyPostpaid").value = "";
 }
 function CalAdsl() {
     document.getElementById("RealMoneyADSL").value = Math.ceil(Number(document.getElementById("ReqBalanceADSL").value * 14) / 100) + Number(document.getElementById("ReqBalanceADSL").value) || 0 + " LE";

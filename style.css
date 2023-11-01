@@ -32,15 +32,14 @@ h2 {
 }
 .mainDiv {
     background-color: var(--mainDiv);
-    padding: 40px 25px 40px 25px;
+    padding: 25px;
 }
 .content {
     max-width: max-content;
     margin: auto;
 }
 tr {
-    height: 34px;
-    text-align: right;
+    height: 28px;
 }
 footer {
     display: inline-block;
@@ -51,20 +50,25 @@ input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
     margin: 0;
+    width: 120px;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type="text"] {
+    width: 80px;
+}
+
 input[type="button"],
 [type="reset"] {
     margin: 0px 0px 0px 4px;
 }
 label {
     font-size: 14px;
-    color: var(--color);
+    color: white;
 }
 .label {
-    text-align: left;
+    background-color: #5b2c92;
 }

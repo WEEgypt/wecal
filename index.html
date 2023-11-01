@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=0.85,maximum-scale=1,user-scalable=no" />
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <title>WE Calculator</title>
         <link rel="icon" href="icon.png" />
@@ -14,40 +14,37 @@
             <h2>WE Calculator</h2>
             <table class="content">
                 <tr>
-                    <td colspan="2" class="label"><label>Recharge Prepaid</label></td>
+                    <td colspan="4" class="label"><label>Recharge Prepaid</label></td>
                 </tr>
                 <tr>
-                    <td><input type="number" id="ReqBalancePrepaid" placeholder="Required Balance" maxlength="8" oninput="Check(this)" /></td>
+                    <td><input type="number" id="ReqBalancePrepaid" placeholder="Required Balance" maxlength="6" oninput="Check(this)" /></td>
                     <td><input type="text" id="RealMoneyPrepaid" placeholder="LE" size="10" readonly /></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" onclick="CalPrepaid()" value="Calculate" /><input type="reset" value="Reset" onclick="ResetPrepaid()" /></td>
+                    <td><input type="button" onclick="CalPrepaid()" value="Calculate" /></td>
+                    <td><input type="reset" value="Reset" onclick="ResetPrepaid()" /></td>
                 </tr>
             </table>
             <br />
             <table class="content">
                 <tr>
-                    <td colspan="2" class="label"><label>Recharge ADSL</label></td>
+                    <td colspan="4" class="label"><label>Recharge ADSL</label></td>
                 </tr>
                 <tr>
-                    <td><input type="number" id="ReqBalanceADSL" placeholder="Required Balance" maxlength="8" oninput="Check(this)" /></td>
+                    <td><input type="number" id="ReqBalanceADSL" placeholder="Required Balance" maxlength="6" oninput="Check(this)" /></td>
                     <td><input type="text" id="RealMoneyADSL" placeholder="LE" size="10" readonly /></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" onclick="CalAdsl()" value="Calculate" /><input type="reset" value="Reset" onclick="ResetAdsl()" /></td>
+                    <td><input type="button" onclick="CalAdsl()" value="Calculate" /></td>
+                    <td><input type="reset" value="Reset" onclick="ResetAdsl()" /></td>
                 </tr>
             </table>
             <br />
             <table class="content">
                 <tr>
-                    <td colspan="2" class="label"><label>Remaining Quota</label></td>
+                    <td colspan="4" class="label"><label>Remaining Quota</label></td>
                 </tr>
                 <tr>
                     <td><input type="number" id="BESQuota" placeholder="BES Quota" maxlength="14" oninput="Check(this)" /></td>
                     <td><input type="text" id="CSTQuota" placeholder="GB" size="10" readonly /></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" onclick="CalQuota()" value="Calculate" /><input type="reset" value="Reset" onclick="ResetQuota()" /></td>
+                    <td><input type="button" onclick="CalQuota()" value="Calculate" /></td>
+                    <td><input type="reset" value="Reset" onclick="ResetQuota()" /></td>
                 </tr>
             </table>
         </div>

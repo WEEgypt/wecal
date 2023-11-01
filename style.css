@@ -71,5 +71,4 @@ label {
 }
 .label {
     background-color: var(--color);
-    background-clip: content-box;
 }

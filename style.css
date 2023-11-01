@@ -32,7 +32,7 @@ h2 {
 }
 .mainDiv {
     background-color: var(--mainDiv);
-    padding: 25px;
+    padding: 25px 25px 15px 25px;
 }
 .content {
     max-width: max-content;

@@ -67,8 +67,9 @@ input[type="button"],
 }
 label {
     font-size: 14px;
-    color: white;
+    color: var(--bg);
 }
 .label {
-    background-color: #5b2c92;
+    background-color: var(--color);
+    background-clip: content-box;
 }

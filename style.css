@@ -32,7 +32,7 @@ h2 {
 }
 .mainDiv {
     background-color: var(--mainDiv);
-    padding: 25px;
+    padding: 40px 25px 40px 25px;
 }
 .content {
     max-width: max-content;
@@ -40,6 +40,7 @@ h2 {
 }
 tr {
     height: 34px;
+    text-align: right;
 }
 footer {
     display: inline-block;
@@ -62,8 +63,8 @@ input[type="button"],
 }
 label {
     font-size: 14px;
-    color: white;
+    color: var(--color);
 }
 .label {
-    background-color: #5b2c92;
+    text-align: left;
 }

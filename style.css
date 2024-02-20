@@ -1,29 +1,24 @@
 :root {
-    --bg: #f2f2f2;
-    --mainDiv: #fff;
-    --color: #2d3737;
+    --bg: #fff;
+    --color: #000;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #000;
-        --mainDiv: #2d3737;
         --color: #fff;
     }
 }
 html {
     display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100%;
 }
 body {
+    margin: auto;
+    min-width: max-content;
+    padding: 20px;
     font-family: verdana;
     font-size: 14px;
-    margin: auto;
-    width: 420px;
-    min-width: max-content;
     color: var(--color);
-    padding: 10px;
     background-color: var(--bg);
     text-align: center;
 }
@@ -31,27 +26,20 @@ h2 {
     text-align: center;
     padding: 0px 0px 10px 0px;
 }
-.mainDiv {
-    background-color: var(--mainDiv);
-    padding: 30px 25px 30px 25px;
+label {
+    font-size: 14px;
+    color: white;
 }
-.content {
-    max-width: max-content;
-    margin: auto;
+.label {
+    background-color: #5b2c92;
 }
-tr {
-    height: 28px;
-}
-footer {
-    display: inline-block;
-    font-size: 9px;
-    min-width: 300px;
+input[type="number"] {
+    width: 120px;
 }
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
     margin: 0;
-    width: 120px;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -59,17 +47,15 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 input[type="text"] {
-    width: 80px;
+    width: 84px;
 }
 
 input[type="button"],
 [type="reset"] {
     margin: 0px 0px 0px 4px;
 }
-label {
-    font-size: 14px;
-    color: white;
-}
-.label {
-    background-color: #5b2c92;
+footer {
+    display: inline-block;
+    font-size: 9px;
+    min-width: 300px;
 }

@@ -15,13 +15,7 @@
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open("my-pwa-cache").then((cache) => {
-            return cache.addAll([
-                "index.html",
-                "icon.png",
-                "manifest.webmanifest",
-                "style.css",
-                // Add other assets and routes to cache
-            ]);
+            return cache.addAll(["icon.png", "index.html", "manifest.webmanifest", "pulltorefresh.js", "style.css"]);
         })
     );
 });

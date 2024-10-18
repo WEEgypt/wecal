@@ -1,28 +1,80 @@
-{
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker
-                .register("service-worker.js")
-                .then((registration) => {
-                    console.log("Service Worker registered with scope:", registration.scope);
-                })
-                .catch((error) => {
-                    console.log("Service Worker registration failed:", error);
-                });
-        });
-    }
-}
+const CACHE_NAME = "wecal-v1";
+const OFFLINE_URL = "./offline.html";
+const NOT_FOUND_URL = "./404.html";
+const ASSETS_TO_CACHE = [
+  "./",
+  "./404.html",
+  "./agent.html",
+  "./agent.js",
+  "./area.html",
+  "./area.js",
+  "./icon512_maskable.png",
+  "./icon512.png",
+  "./index.html",
+  "./manifest.json",
+  "./offline.html",
+  "./script.js",
+  "./service-worker.js",
+  "./store.html",
+  "./store.js",
+  "./style.css",
+  "./transformer.js",
+];
 self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open("weCal-cache-v1").then((cache) => {
-            return cache.addAll(["icon.png", "icon512_maskable.png", "icon512_rounded.png", "index.html", "manifest.json", "service-worker.js", "style.css"]);
-        })
-    );
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS_TO_CACHE);
+    })
+  );
+  self.skipWaiting();
 });
+
 self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
+  const requestURL = new URL(event.request.url);
+  if (
+    requestURL.protocol === "chrome-extension:" ||
+    event.request.method !== "GET"
+  ) {
+    return;
+  }
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request)
+        .then((networkResponse) => {
+          if (
+            !networkResponse ||
+            networkResponse.status !== 200 ||
+            networkResponse.type === "opaque"
+          ) {
+            if (networkResponse && networkResponse.status === 404) {
+              return caches.match(NOT_FOUND_URL);
+            }
+            return networkResponse;
+          }
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
         })
-    );
+        .catch(() => {
+          return caches.match(OFFLINE_URL);
+        });
+    })
+  );
+});
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });

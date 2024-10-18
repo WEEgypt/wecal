@@ -4,21 +4,14 @@ const NOT_FOUND_URL = "./404.html";
 const ASSETS_TO_CACHE = [
   "./",
   "./404.html",
-  "./agent.html",
-  "./agent.js",
-  "./area.html",
-  "./area.js",
   "./icon512_maskable.png",
   "./icon512.png",
   "./index.html",
+  "./main.js",
   "./manifest.json",
   "./offline.html",
-  "./script.js",
   "./service-worker.js",
-  "./store.html",
-  "./store.js",
   "./style.css",
-  "./transformer.js",
 ];
 self.addEventListener("install", (event) => {
   event.waitUntil(
